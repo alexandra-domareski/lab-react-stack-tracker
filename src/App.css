@@ -1,42 +1,282 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  /* min-height: 100vh; */
+}
+
+.navbar {
+  background: linear-gradient(
+    90deg,
+    rgb(56, 75, 245) 0%,
+    rgb(80, 100, 255) 100%
+  );
+  color: white;
+  padding: 20px 40px;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  z-index: 100;
+  box-sizing: border-box;
+  font-weight: 600;
+  font-size: 1.3em;
+}
+
+.companies-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  padding: 40px 20px;
+}
+
+.page-title {
+  font-size: 2.5rem;
+  margin-top: 100px;
   text-align: center;
+  color: rgb(56, 75, 245);
+  font-weight: 700;
+  letter-spacing: -0.5px;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
-}
-
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.company-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 30px;
+  background: white;
+  border-radius: 16px;
+  width: 200px;
+  box-shadow: 0 8px 25px rgba(56, 75, 245, 0.15);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+  border: none;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.company-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 40px rgba(56, 75, 245, 0.25);
 }
 
-.card {
-  padding: 2em;
+.company-logo,
+.tech-logo-details {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+  transition: transform 0.3s ease;
 }
 
-.read-the-docs {
-  color: #888;
+.company-card:hover .company-logo {
+  transform: scale(1.1);
+}
+
+.company-name {
+  text-align: center;
+  font-size: 1.2em;
+  margin-top: 15px;
+  color: rgb(56, 75, 245);
+  font-weight: 600;
+}
+
+.details-page {
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 60px;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  box-sizing: border-box;
+}
+
+.details-title {
+  text-align: center;
+  margin-top: 80px;
+  font-size: 2.5em;
+  color: rgb(56, 75, 245);
+  font-weight: 700;
+  margin-bottom: 30px;
+}
+
+.company-profile,
+.tech-profile {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 60px;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px;
+  box-sizing: border-box;
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0 12px 40px rgba(56, 75, 245, 0.2);
+}
+
+.company-content,
+.tech-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 500px;
+}
+
+.company-name,
+.tech-name-2 {
+  font-size: 2em;
+  margin-bottom: 15px;
+  color: rgb(56, 75, 245);
+  font-weight: 700;
+}
+
+.company-image,
+.tech-image {
+  margin: 0;
+  padding: 30px;
+  background: linear-gradient(135deg, #f5f7fa 0%, #e8ecf1 100%);
+  border-radius: 16px;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.company-image img,
+.tech-image img {
+  max-width: 150px;
+  max-height: 150px;
+}
+
+.company-description,
+.tech-description {
+  padding: 20px 0;
+  text-align: center;
+  font-size: 1.05em;
+  line-height: 1.6;
+  margin: 0;
+  color: #333;
+}
+
+h3 {
+  margin: 20px 0 15px 0;
+  color: rgb(56, 75, 245);
+  font-size: 1.3em;
+  font-weight: 600;
+}
+
+.tech-list {
+  display: flex;
+  gap: 15px;
+  list-style: none;
+  padding: 0;
+  margin-top: 50px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.tech-item {
+  margin: 0;
+  padding: 0;
+  border: none;
+  border-radius: 12px;
+}
+
+.tech-link {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  color: inherit;
+  padding: 20px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(56, 75, 245, 0.12);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  min-width: 120px;
+}
+
+.tech-link:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 30px rgba(56, 75, 245, 0.2);
+  color: rgb(56, 75, 245);
+}
+
+.tech-logo {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+.tech-link:hover .tech-logo {
+  transform: scale(1.15);
+}
+
+.tech-name {
+  font-weight: 600;
+  font-size: 0.95em;
+}
+
+.nav-brand {
+  text-decoration: none;
+  color: white;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1.3em;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  transition: opacity 0.3s ease;
+}
+
+.nav-brand:hover {
+  opacity: 0.9;
+}
+
+button,
+.btn {
+  background: linear-gradient(
+    90deg,
+    rgb(56, 75, 245) 0%,
+    rgb(80, 100, 255) 100%
+  );
+  color: white;
+  border: none;
+  padding: 12px 30px;
+  font-size: 1em;
+  font-weight: 600;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 6px 20px rgba(56, 75, 245, 0.3);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+button:hover,
+.btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 30px rgba(56, 75, 245, 0.4);
+}
+
+button:active,
+.btn:active {
+  transform: translateY(-1px);
+}
+
+.back-button {
+  margin-top: 40px;
+}
+
+.card-link {
+  text-decoration: none;
+  color: inherit;
 }
